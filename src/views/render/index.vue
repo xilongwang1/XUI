@@ -20,7 +20,7 @@
     <x-tag @myEvent="changes" :type="type5" v-permission="'tag'"
       >我是权限tag</x-tag
     >
-    {{ $store.state }}
+    <!-- {{ $store.state }} -->
     <x-button :type="type">{{ $store.state.name }}</x-button>
     <x-button :type="type">{{ render }}</x-button>
   </div>
