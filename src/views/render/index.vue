@@ -17,13 +17,18 @@
     <div style="margin-top: 30px" />
     <x-button :type="type" v-permission="'button'">我是权限button</x-button>
     <x-button :type="type" v-permission="'2'">我是权限2</x-button>
-    <x-tag @myEvent="changes" :type="type5"  v-permission="'tag'">我是权限tag</x-tag>
+    <x-tag @myEvent="changes" :type="type5" v-permission="'tag'"
+      >我是权限tag</x-tag
+    >
+    {{ $store.state }}
+    <x-button :type="type">{{ $store.state.name }}</x-button>
+    <x-button :type="type">{{ render }}</x-button>
   </div>
 </template>
-0
 <script>
 export default {
   name: "Render",
+  isVuex: true,
   data() {
     return {
       type: "success",
@@ -43,14 +48,19 @@ export default {
       text7: "警告标签",
       type8: "info",
       text8: "置灰标签",
+      //=====================
+      render: "默认",
     };
   },
 
   methods: {
     changes(e) {
       console.log("按钮改变了", e);
+      console.log(this.$store.state);
+      this.render = this.$store.state.Render.name;
     },
   },
+  mounted() {},
 };
 </script>
 
