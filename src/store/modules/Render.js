@@ -1,6 +1,6 @@
 export default {
   state: {
-    name: "赵四",
+    name: "张三",
   },
   mutations: {},
   actions: {},
