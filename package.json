@@ -1,10 +1,14 @@
 {
-  "name": "vue_2",
-  "version": "0.1.0",
-  "private": true,
+  "name": "x-ui",
+  "version": "0.0.1",
+  "description": "x-ui组件库 ",
+  "main": "dist/x-ui.umd.min.js",
+  "keyword":"x-ui",
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "lib": "vue-cli-service build --target lib --name x-ui  src/components/component/index.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
