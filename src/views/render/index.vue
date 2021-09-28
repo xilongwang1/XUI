@@ -17,12 +17,15 @@
     <div style="margin-top: 30px" />
     <x-button :type="type" v-permission="'button'">我是权限button</x-button>
     <x-button :type="type" v-permission="'2'">我是权限2</x-button>
-    <x-tag @myEvent="changes" :type="type5" v-permission="'tag'"
-      >我是权限tag</x-tag
-    >
+    <x-tag @myEvent="changes" :type="type5" v-permission="'tag'">我是权限tag</x-tag>
     <!-- {{ $store.state }} -->
     <x-button :type="type">{{ $store.state.name }}</x-button>
     <x-button :type="type">{{ render }}</x-button>
+    <div style="margin-top: 30px" />
+    <x-button :type="type" v-copy id="text">单击复制此文本</x-button>
+    <x-button :type="type" v-copy.dblclick>双击击复制此文本</x-button>
+    <x-button :type="type" v-copy.icon>icon复制此文本</x-button>
+    <div style="width: 200px" v-ellipsis>需要省略的文字是阿萨的副本阿萨的副本阿萨的副本阿萨的副本</div>
   </div>
 </template>
 <script>
@@ -50,6 +53,13 @@ export default {
       text8: "置灰标签",
       //=====================
       render: "默认",
+
+      emptyValue:{
+        content: '暂无列表',
+        // img: require('../../assets/images/blue_big.png'),
+        img: 'https://testoss.dianmeicn.cn/management/2021092616260277086.png',
+        visible: true,
+      },
     };
   },
 
@@ -60,8 +70,9 @@ export default {
       this.render = this.$store.state.Render.name;
     },
   },
-  mounted() {},
+  mounted() { },
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+</style>
